@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edoardo "The Ghost" Caiazza — MMA Coach & Fighter</title>
+<meta name="description" content="Edoardo Caiazza — Professional MMA fighter, Bellator & Cage Warriors veteran. Private coaching in striking, grappling, wrestling, MMA strategy.">
+<meta property="og:title" content="Edoardo 'The Ghost' Caiazza — MMA Coach & Fighter">
+<meta property="og:description" content="Train with a Bellator & Cage Warriors veteran. Private coaching, seminars, fight camps.">
+<meta property="og:image" content="edo-4.jpeg">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --black:#050505;--dark:#0a0a0a;--ghost:#1a1a2e;
+  --cream:#d4d0c8;--white:#eee;--grey:#666;--grey-l:#999;
+  --accent:#7b8fa8;--accent-l:#9bb0c9;--accent-glow:rgba(123,143,168,0.15);
+  --red:#8b2020;--red-l:#b33030;
+  --line:rgba(212,208,200,0.08);
+}
+body{
+  font-family:'Georgia','Times New Roman',serif;
+  color:var(--cream);background:var(--black);
+  line-height:1.7;overflow-x:hidden;
+}
+
+/* LANG SWITCHER */
+.lang-hide{display:none !important}
+.lang-switch{
+  position:fixed;top:14px;right:14px;z-index:200;
+  display:flex;gap:0;border:1px solid var(--accent);border-radius:3px;
+  overflow:hidden;background:rgba(5,5,5,0.9);backdrop-filter:blur(12px);
+}
+.lang-btn{
+  padding:5px 10px;background:transparent;border:none;color:var(--cream);
+  cursor:pointer;font-family:inherit;font-size:0.65rem;letter-spacing:2px;
+  text-transform:uppercase;transition:all 0.3s;
+}
+.lang-btn.active{background:var(--accent);color:var(--black)}
+.lang-btn:hover:not(.active){background:rgba(123,143,168,0.15)}
+
+/* NAV */
+.navbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(5,5,5,0.85);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);padding:10px 20px;
+  display:flex;justify-content:center;align-items:center;
+  transition:all 0.4s;
+}
+.navbar.scrolled{padding:6px 20px;border-bottom-color:var(--accent)}
+.nav-links{display:flex;gap:20px;align-items:center}
+.nav-links a{
+  color:var(--cream);text-decoration:none;font-size:0.7rem;
+  letter-spacing:3px;text-transform:uppercase;opacity:0.5;
+  transition:all 0.3s;
+}
+.nav-links a:hover{opacity:1;color:var(--accent-l)}
+
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  position:relative;padding:80px 20px 40px;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('edo-4.jpeg') center top/cover no-repeat;
+  filter:brightness(0.2) contrast(1.2) saturate(0.6);
+  z-index:0;
+}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    radial-gradient(ellipse at center,rgba(5,5,5,0.2) 0%,rgba(5,5,5,0.7) 70%),
+    linear-gradient(180deg,rgba(5,5,5,0.1) 0%,rgba(5,5,5,0.3) 40%,rgba(5,5,5,0.9) 100%);
+}
+/* Ghost fog effect */
+.hero-fog{
+  position:absolute;bottom:0;left:0;right:0;height:40%;z-index:1;
+  background:linear-gradient(0deg,var(--black) 0%,transparent 100%);
+}
+.hero-content{position:relative;z-index:2;max-width:700px}
+.hero-nickname{
+  font-size:clamp(0.9rem,2vw,1.3rem);letter-spacing:14px;
+  text-transform:uppercase;color:var(--accent);
+  opacity:0.7;margin-bottom:8px;font-style:italic;
+}
+.hero h1{
+  font-size:clamp(2.5rem,6vw,5rem);font-weight:300;
+  letter-spacing:8px;text-transform:uppercase;margin-bottom:4px;
+  line-height:1.1;
+  text-shadow:0 0 60px rgba(123,143,168,0.15);
+}
+.hero h1 strong{font-weight:700;color:var(--white)}
+.hero-sub{
+  font-size:clamp(0.75rem,1.2vw,0.9rem);letter-spacing:5px;
+  text-transform:uppercase;color:var(--grey-l);margin-bottom:28px;
+}
+.hero-stats{
+  display:flex;gap:28px;justify-content:center;margin-bottom:32px;
+}
+.hero-stat{text-align:center}
+.hero-stat .hs-num{
+  font-size:2rem;font-weight:300;color:var(--accent-l);letter-spacing:2px;
+}
+.hero-stat .hs-label{
+  font-size:0.55rem;letter-spacing:3px;text-transform:uppercase;color:var(--grey);
+}
+.hero-cta{
+  display:inline-block;padding:14px 44px;
+  border:1px solid var(--accent);color:var(--accent-l);
+  text-decoration:none;font-family:inherit;font-size:0.8rem;
+  letter-spacing:5px;text-transform:uppercase;transition:all 0.4s;
+}
+.hero-cta:hover{
+  background:var(--accent);color:var(--black);
+  box-shadow:0 0 40px rgba(123,143,168,0.2);
+}
+
+/* SECTIONS */
+section{padding:80px 20px;position:relative}
+.container{max-width:900px;margin:0 auto}
+.section-title{
+  font-size:clamp(1.3rem,3vw,1.8rem);font-weight:300;
+  text-align:center;letter-spacing:8px;text-transform:uppercase;
+  margin-bottom:6px;color:var(--white);
+}
+.section-sub{
+  text-align:center;color:var(--grey);margin-bottom:40px;
+  font-size:0.85rem;font-style:italic;letter-spacing:1px;
+}
+.divider{
+  text-align:center;padding:20px 0;
+}
+.divider::before{
+  content:'';display:block;height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  margin:0 auto;max-width:400px;opacity:0.4;
+}
+
+/* ABOUT */
+.about-text{
+  max-width:700px;margin:0 auto;text-align:center;
+  font-size:1rem;line-height:2;color:rgba(212,208,200,0.75);
+}
+.about-text strong{color:var(--accent-l)}
+
+/* CREDENTIALS */
+.cred-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:6px 30px;
+  max-width:700px;margin:0 auto;
+}
+.cred-item{
+  padding:8px 0 8px 16px;font-size:0.9rem;
+  color:rgba(212,208,200,0.7);position:relative;
+  border-bottom:1px solid var(--line);
+}
+.cred-item::before{
+  content:'';position:absolute;left:0;top:14px;
+  width:6px;height:6px;border:1px solid var(--accent);
+  transform:rotate(45deg);
+}
+.cred-item strong{color:var(--cream)}
+
+/* SERVICES */
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.service-card{
+  border:1px solid var(--line);padding:32px 24px;
+  text-align:center;position:relative;overflow:hidden;
+  transition:all 0.5s;background:rgba(123,143,168,0.02);
+}
+.service-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  opacity:0;transition:opacity 0.4s;
+}
+.service-card:hover{
+  border-color:rgba(123,143,168,0.3);
+  transform:translateY(-4px);
+  box-shadow:0 10px 40px rgba(123,143,168,0.08);
+}
+.service-card:hover::before{opacity:1}
+.service-icon{
+  font-size:1.8rem;margin-bottom:12px;color:var(--accent);
+  opacity:0.7;
+}
+.service-title{
+  font-size:0.85rem;letter-spacing:4px;text-transform:uppercase;
+  margin-bottom:10px;color:var(--white);
+}
+.service-desc{
+  font-size:0.82rem;color:var(--grey-l);line-height:1.8;
+}
+
+/* GALLERY */
+.gallery-grid{
+  display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:6px;
+  max-width:800px;margin:0 auto;
+}
+.gallery-grid img{
+  width:100%;height:360px;object-fit:cover;object-position:top;
+  filter:saturate(0.5) contrast(1.1);
+  border:1px solid var(--line);
+  transition:all 0.5s;
+}
+.gallery-grid img:hover{
+  filter:saturate(0.8) contrast(1.1);
+  border-color:rgba(123,143,168,0.3);
+}
+
+/* QUOTE */
+.quote-section{
+  text-align:center;padding:60px 20px;
+  background:radial-gradient(ellipse at center,rgba(123,143,168,0.04) 0%,transparent 70%);
+}
+.quote-text{
+  font-size:clamp(1.1rem,2vw,1.4rem);font-style:italic;
+  color:rgba(212,208,200,0.5);max-width:600px;margin:0 auto;
+  line-height:2;letter-spacing:1px;
+}
+.quote-text strong{color:var(--accent-l);font-style:normal}
+
+/* FORM */
+.form-section{background:rgba(123,143,168,0.02)}
+.form-wrap{
+  max-width:520px;margin:0 auto;border:1px solid rgba(123,143,168,0.2);
+  padding:36px 32px;background:rgba(10,10,10,0.5);
+}
+.form-group{margin-bottom:18px}
+.form-group label{
+  display:block;font-size:0.68rem;letter-spacing:3px;
+  text-transform:uppercase;color:var(--accent);margin-bottom:6px;
+}
+.form-group input,.form-group textarea,.form-group select{
+  width:100%;padding:12px 14px;background:rgba(212,208,200,0.04);
+  border:1px solid var(--line);color:var(--cream);font-family:inherit;
+  font-size:0.9rem;transition:border-color 0.3s;outline:none;
+}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{
+  border-color:var(--accent);
+}
+.form-group input::placeholder,.form-group textarea::placeholder{
+  color:rgba(212,208,200,0.25);font-style:italic;
+}
+.form-group textarea{min-height:90px;resize:vertical}
+.form-group select option{background:var(--dark);color:var(--cream)}
+.submit-btn{
+  width:100%;padding:14px;background:transparent;border:1px solid var(--accent);
+  color:var(--accent-l);font-family:inherit;font-size:0.8rem;letter-spacing:5px;
+  text-transform:uppercase;cursor:pointer;transition:all 0.4s;
+}
+.submit-btn:hover{
+  background:var(--accent);color:var(--black);
+  box-shadow:0 0 30px rgba(123,143,168,0.2);
+}
+
+/* CONTACT BAR */
+.contact-bar{
+  display:flex;justify-content:center;gap:40px;
+  flex-wrap:wrap;padding:40px 20px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.contact-link{
+  display:flex;align-items:center;gap:10px;
+  text-decoration:none;color:var(--cream);
+  font-size:0.85rem;letter-spacing:2px;
+  transition:color 0.3s;
+}
+.contact-link:hover{color:var(--accent-l)}
+.contact-link .cl-icon{
+  width:40px;height:40px;border-radius:50%;
+  border:1px solid var(--accent);display:flex;
+  align-items:center;justify-content:center;
+  font-size:0.9rem;color:var(--accent);
+  transition:all 0.3s;
+}
+.contact-link:hover .cl-icon{
+  background:var(--accent);color:var(--black);
+}
+
+/* FOOTER */
+footer{padding:30px 20px;text-align:center}
+footer p{font-size:0.7rem;color:var(--grey);letter-spacing:2px}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .services-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .gallery-grid img{height:240px}
+  .gallery-grid img:nth-child(3){grid-column:1/3;height:200px}
+  .cred-grid{grid-template-columns:1fr}
+  .hero-stats{gap:16px}
+  .contact-bar{gap:20px;flex-direction:column;align-items:center}
+  .lang-switch{top:auto;bottom:14px;right:14px}
+  .nav-links a{font-size:0.6rem;letter-spacing:2px}
+  .nav-links{gap:10px}
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ghostPulse{0%,100%{opacity:0.5}50%{opacity:1}}
+.fade-in{opacity:0;animation:fadeUp 0.8s ease forwards}
+.d1{animation-delay:0.1s}.d2{animation-delay:0.25s}
+.d3{animation-delay:0.4s}.d4{animation-delay:0.6s}.d5{animation-delay:0.8s}
+
+/* Ghost particle canvas */
+#ghostCanvas{
+  position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0.4;
+}
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE SWITCHER -->
+<div class="lang-switch">
+  <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('it')">IT</button>
+  <button class="lang-btn" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" onclick="setLang('ru')">RU</button>
+</div>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-links">
+    <a href="#about" data-lang="en">About</a>
+    <a href="#about" data-lang="it">Chi Sono</a>
+    <a href="#about" data-lang="fr">&Agrave; Propos</a>
+    <a href="#about" data-lang="ru">&#1054;&#1073;&#1086; &#1084;&#1085;&#1077;</a>
+    <a href="#services" data-lang="en">Services</a>
+    <a href="#services" data-lang="it">Servizi</a>
+    <a href="#services" data-lang="fr">Services</a>
+    <a href="#services" data-lang="ru">&#1059;&#1089;&#1083;&#1091;&#1075;&#1080;</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#book" data-lang="en">Book Now</a>
+    <a href="#book" data-lang="it">Prenota</a>
+    <a href="#book" data-lang="fr">R&eacute;server</a>
+    <a href="#book" data-lang="ru">&#1047;&#1072;&#1087;&#1080;&#1089;&#1100;</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-fog"></div>
+  <canvas id="ghostCanvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-nickname fade-in d1">&ldquo;The Ghost&rdquo;</div>
+    <h1 class="fade-in d2"><strong>Edoardo</strong> Caiazza</h1>
+
+    <div class="hero-sub fade-in d3" data-lang="en">Professional MMA Fighter &bull; Coach &bull; Strategist</div>
+    <div class="hero-sub fade-in d3" data-lang="it">Atleta Professionista MMA &bull; Coach &bull; Stratega</div>
+    <div class="hero-sub fade-in d3" data-lang="fr">Combattant MMA Professionnel &bull; Coach &bull; Strat&egrave;ge</div>
+    <div class="hero-sub fade-in d3" data-lang="ru">&#1055;&#1088;&#1086;&#1092;&#1077;&#1089;&#1089;&#1080;&#1086;&#1085;&#1072;&#1083;&#1100;&#1085;&#1099;&#1081; &#1073;&#1086;&#1077;&#1094; MMA &bull; &#1058;&#1088;&#1077;&#1085;&#1077;&#1088; &bull; &#1057;&#1090;&#1088;&#1072;&#1090;&#1077;&#1075;</div>
+
+    <div class="hero-stats fade-in d4">
+      <div class="hero-stat"><div class="hs-num">7-2</div><div class="hs-label">Pro Record</div></div>
+      <div class="hero-stat"><div class="hs-num">100%</div><div class="hs-label">KO Rate</div></div>
+      <div class="hero-stat"><div class="hs-num">3x</div><div class="hs-label" data-lang="en">Italian Champion</div><div class="hs-label" data-lang="it">Campione Italiano</div><div class="hs-label" data-lang="fr">Champion d'Italie</div><div class="hs-label" data-lang="ru">&#1063;&#1077;&#1084;&#1087;&#1080;&#1086;&#1085; &#1048;&#1090;&#1072;&#1083;&#1080;&#1080;</div></div>
+    </div>
+
+    <a href="#book" class="hero-cta fade-in d5" data-lang="en">Train with The Ghost</a>
+    <a href="#book" class="hero-cta fade-in d5" data-lang="it">Allenati con The Ghost</a>
+    <a href="#book" class="hero-cta fade-in d5" data-lang="fr">Entra&icirc;nez-vous avec The Ghost</a>
+    <a href="#book" class="hero-cta fade-in d5" data-lang="ru">&#1058;&#1088;&#1077;&#1085;&#1080;&#1088;&#1091;&#1081;&#1089;&#1103; &#1089; The Ghost</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="divider"></div>
+    <h2 class="section-title" data-lang="en">The Fighter</h2>
+    <h2 class="section-title" data-lang="it">Il Combattente</h2>
+    <h2 class="section-title" data-lang="fr">Le Combattant</h2>
+    <h2 class="section-title" data-lang="ru">&#1041;&#1086;&#1077;&#1094;</h2>
+
+    <div class="about-text" data-lang="en">
+      <strong>Edoardo Caiazza</strong> is a professional MMA fighter from Verbania, Italy. With a pro record of <strong>7-2</strong> &mdash; all seven victories by knockout &mdash; he has competed on the biggest stages in European MMA, including <strong>Bellator</strong> and <strong>Cage Warriors</strong>.<br><br>
+      After overcoming a <strong>brain hemorrhage</strong> that nearly ended his career, Edoardo returned stronger than ever, proving that true fighters are forged through adversity. He has trained at the world's elite gyms, including <strong>SBG Ireland</strong> alongside Conor McGregor's team, top camps across <strong>England</strong>, and three months in <strong>California</strong> filming the Cage Warriors docu-series <strong>MMA Fight Academy</strong>.<br><br>
+      Now he brings that world-class experience to you.
+    </div>
+    <div class="about-text" data-lang="it">
+      <strong>Edoardo Caiazza</strong> &egrave; un combattente MMA professionista di Verbania, Italia. Con un record pro di <strong>7-2</strong> &mdash; tutte e sette le vittorie per KO &mdash; ha combattuto sui palcoscenici pi&ugrave; importanti della MMA europea, tra cui <strong>Bellator</strong> e <strong>Cage Warriors</strong>.<br><br>
+      Dopo aver superato un'<strong>emorragia cerebrale</strong> che ha quasi chiuso la sua carriera, Edoardo &egrave; tornato pi&ugrave; forte di prima, dimostrando che i veri combattenti si forgiano nelle avversit&agrave;. Si &egrave; allenato nelle migliori palestre al mondo, tra cui <strong>SBG Ireland</strong> con il team di Conor McGregor, i migliori camp in <strong>Inghilterra</strong> e tre mesi in <strong>California</strong> per il docu-reality <strong>MMA Fight Academy</strong> di Cage Warriors.<br><br>
+      Ora porta tutta questa esperienza a te.
+    </div>
+    <div class="about-text" data-lang="fr">
+      <strong>Edoardo Caiazza</strong> est un combattant MMA professionnel de Verbania, Italie. Avec un palmar&egrave;s pro de <strong>7-2</strong> &mdash; sept victoires, toutes par KO &mdash; il a combattu sur les plus grandes sc&egrave;nes du MMA europ&eacute;en, dont <strong>Bellator</strong> et <strong>Cage Warriors</strong>.<br><br>
+      Apr&egrave;s avoir surmont&eacute; une <strong>h&eacute;morragie c&eacute;r&eacute;brale</strong> qui a failli mettre fin &agrave; sa carri&egrave;re, Edoardo est revenu plus fort que jamais. Il s'est entra&icirc;n&eacute; dans les meilleurs gyms au monde, dont le <strong>SBG Ireland</strong> aux c&ocirc;t&eacute;s de l'&eacute;quipe de Conor McGregor, les meilleurs camps en <strong>Angleterre</strong> et trois mois en <strong>Californie</strong> pour le docu-s&eacute;rie <strong>MMA Fight Academy</strong> de Cage Warriors.<br><br>
+      Il met d&eacute;sormais toute cette exp&eacute;rience &agrave; votre service.
+    </div>
+    <div class="about-text" data-lang="ru">
+      <strong>&#1069;&#1076;&#1086;&#1072;&#1088;&#1076;&#1086; &#1050;&#1072;&#1081;&#1072;&#1094;&#1094;&#1072;</strong> &mdash; &#1087;&#1088;&#1086;&#1092;&#1077;&#1089;&#1089;&#1080;&#1086;&#1085;&#1072;&#1083;&#1100;&#1085;&#1099;&#1081; &#1073;&#1086;&#1077;&#1094; MMA &#1080;&#1079; &#1042;&#1077;&#1088;&#1073;&#1072;&#1085;&#1080;&#1080;, &#1048;&#1090;&#1072;&#1083;&#1080;&#1103;. &#1057; &#1087;&#1088;&#1086;&#1092;&#1077;&#1089;&#1089;&#1080;&#1086;&#1085;&#1072;&#1083;&#1100;&#1085;&#1099;&#1084; &#1088;&#1077;&#1082;&#1086;&#1088;&#1076;&#1086;&#1084; <strong>7-2</strong> &mdash; &#1074;&#1089;&#1077; &#1089;&#1077;&#1084;&#1100; &#1087;&#1086;&#1073;&#1077;&#1076; &#1085;&#1086;&#1082;&#1072;&#1091;&#1090;&#1086;&#1084; &mdash; &#1086;&#1085; &#1074;&#1099;&#1089;&#1090;&#1091;&#1087;&#1072;&#1083; &#1085;&#1072; &#1082;&#1088;&#1091;&#1087;&#1085;&#1077;&#1081;&#1096;&#1080;&#1093; &#1072;&#1088;&#1077;&#1085;&#1072;&#1093; &#1077;&#1074;&#1088;&#1086;&#1087;&#1077;&#1081;&#1089;&#1082;&#1086;&#1075;&#1086; MMA, &#1074;&#1082;&#1083;&#1102;&#1095;&#1072;&#1103; <strong>Bellator</strong> &#1080; <strong>Cage Warriors</strong>.<br><br>
+      &#1055;&#1086;&#1089;&#1083;&#1077; &#1087;&#1077;&#1088;&#1077;&#1085;&#1077;&#1089;&#1105;&#1085;&#1085;&#1086;&#1075;&#1086; <strong>&#1082;&#1088;&#1086;&#1074;&#1086;&#1080;&#1079;&#1083;&#1080;&#1103;&#1085;&#1080;&#1103; &#1074; &#1084;&#1086;&#1079;&#1075;</strong>, &#1082;&#1086;&#1090;&#1086;&#1088;&#1086;&#1077; &#1087;&#1086;&#1095;&#1090;&#1080; &#1079;&#1072;&#1074;&#1077;&#1088;&#1096;&#1080;&#1083;&#1086; &#1077;&#1075;&#1086; &#1082;&#1072;&#1088;&#1100;&#1077;&#1088;&#1091;, &#1069;&#1076;&#1086;&#1072;&#1088;&#1076;&#1086; &#1074;&#1077;&#1088;&#1085;&#1091;&#1083;&#1089;&#1103; &#1089;&#1080;&#1083;&#1100;&#1085;&#1077;&#1077; &#1087;&#1088;&#1077;&#1078;&#1085;&#1077;&#1075;&#1086;. &#1054;&#1085; &#1090;&#1088;&#1077;&#1085;&#1080;&#1088;&#1086;&#1074;&#1072;&#1083;&#1089;&#1103; &#1074; &#1083;&#1091;&#1095;&#1096;&#1080;&#1093; &#1079;&#1072;&#1083;&#1072;&#1093; &#1084;&#1080;&#1088;&#1072;, &#1074;&#1082;&#1083;&#1102;&#1095;&#1072;&#1103; <strong>SBG Ireland</strong> &#1089; &#1082;&#1086;&#1084;&#1072;&#1085;&#1076;&#1086;&#1081; &#1050;&#1086;&#1085;&#1086;&#1088;&#1072; &#1052;&#1072;&#1082;&#1075;&#1088;&#1077;&#1075;&#1086;&#1088;&#1072;, &#1083;&#1091;&#1095;&#1096;&#1080;&#1077; &#1082;&#1101;&#1084;&#1087;&#1099; &#1074; <strong>&#1040;&#1085;&#1075;&#1083;&#1080;&#1080;</strong> &#1080; &#1090;&#1088;&#1080; &#1084;&#1077;&#1089;&#1103;&#1094;&#1072; &#1074; <strong>&#1050;&#1072;&#1083;&#1080;&#1092;&#1086;&#1088;&#1085;&#1080;&#1080;</strong> &#1085;&#1072; &#1089;&#1098;&#1105;&#1084;&#1082;&#1072;&#1093; &#1076;&#1086;&#1082;&#1091;-&#1089;&#1077;&#1088;&#1080;&#1072;&#1083;&#1072; <strong>MMA Fight Academy</strong>.<br><br>
+      &#1058;&#1077;&#1087;&#1077;&#1088;&#1100; &#1086;&#1085; &#1087;&#1088;&#1077;&#1076;&#1083;&#1072;&#1075;&#1072;&#1077;&#1090; &#1101;&#1090;&#1086;&#1090; &#1086;&#1087;&#1099;&#1090; &#1084;&#1080;&#1088;&#1086;&#1074;&#1086;&#1075;&#1086; &#1091;&#1088;&#1086;&#1074;&#1085;&#1103; &#1074;&#1072;&#1084;.
+    </div>
+
+    <!-- CREDENTIALS -->
+    <div style="margin-top:40px">
+      <div class="cred-grid">
+        <div class="cred-item"><strong>Bellator MMA</strong></div>
+        <div class="cred-item"><strong>Cage Warriors</strong></div>
+        <div class="cred-item" data-lang="en">3x <strong>Italian Champion</strong> (FIGMMA / PNFC)</div>
+        <div class="cred-item" data-lang="it">3x <strong>Campione Italiano</strong> (FIGMMA / PNFC)</div>
+        <div class="cred-item" data-lang="fr">3x <strong>Champion d'Italie</strong> (FIGMMA / PNFC)</div>
+        <div class="cred-item" data-lang="ru">3x <strong>&#1063;&#1077;&#1084;&#1087;&#1080;&#1086;&#1085; &#1048;&#1090;&#1072;&#1083;&#1080;&#1080;</strong> (FIGMMA / PNFC)</div>
+        <div class="cred-item"><strong>Campania Kombat</strong> Champion</div>
+        <div class="cred-item"><strong>IMMAF European Championships</strong></div>
+        <div class="cred-item"><strong>SBG Ireland</strong> (McGregor's gym)</div>
+        <div class="cred-item" data-lang="en">Title challenger &mdash; <strong>Denmark</strong></div>
+        <div class="cred-item" data-lang="it">Sfidante titolo &mdash; <strong>Danimarca</strong></div>
+        <div class="cred-item" data-lang="fr">Challenger au titre &mdash; <strong>Danemark</strong></div>
+        <div class="cred-item" data-lang="ru">&#1055;&#1088;&#1077;&#1090;&#1077;&#1085;&#1076;&#1077;&#1085;&#1090; &#1085;&#1072; &#1090;&#1080;&#1090;&#1091;&#1083; &mdash; <strong>&#1044;&#1072;&#1085;&#1080;&#1103;</strong></div>
+        <div class="cred-item"><strong>MMA Fight Academy</strong> &mdash; California</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="background:rgba(123,143,168,0.02)">
+  <div class="container">
+    <div class="divider"></div>
+    <h2 class="section-title" data-lang="en">Services</h2>
+    <h2 class="section-title" data-lang="it">Servizi</h2>
+    <h2 class="section-title" data-lang="fr">Services</h2>
+    <h2 class="section-title" data-lang="ru">&#1059;&#1089;&#1083;&#1091;&#1075;&#1080;</h2>
+    <p class="section-sub" data-lang="en">World-class training, tailored to you</p>
+    <p class="section-sub" data-lang="it">Allenamento di livello mondiale, su misura per te</p>
+    <p class="section-sub" data-lang="fr">Un entra&icirc;nement de classe mondiale, adapt&eacute; &agrave; vous</p>
+    <p class="section-sub" data-lang="ru">&#1058;&#1088;&#1077;&#1085;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1084;&#1080;&#1088;&#1086;&#1074;&#1086;&#1075;&#1086; &#1091;&#1088;&#1086;&#1074;&#1085;&#1103;, &#1072;&#1076;&#1072;&#1087;&#1090;&#1080;&#1088;&#1086;&#1074;&#1072;&#1085;&#1085;&#1099;&#1077; &#1076;&#1083;&#1103; &#1074;&#1072;&#1089;</p>
+
+    <div class="services-grid" data-lang="en">
+      <div class="service-card">
+        <div class="service-icon">&#9733;</div>
+        <div class="service-title">Striking</div>
+        <div class="service-desc">Boxing, kickboxing, and MMA striking. Footwork, combinations, counter-striking, and knockout power from a fighter with a 100% KO rate.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#8982;</div>
+        <div class="service-title">Wrestling &amp; Grappling</div>
+        <div class="service-desc">Takedowns, takedown defense, chain wrestling, ground control, scrambles, and transitions. For BJJ, MMA, or pure wrestling.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9670;</div>
+        <div class="service-title">MMA Strategy</div>
+        <div class="service-desc">Fight game plans, cage craft, round management, and mental preparation. Cornering and fight camp coaching for competitors.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9654;</div>
+        <div class="service-title">Private Coaching</div>
+        <div class="service-desc">One-on-one sessions tailored to your goals. Whether you're a beginner looking to learn or a fighter preparing for competition.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9673;</div>
+        <div class="service-title">Seminars &amp; Stages</div>
+        <div class="service-desc">Bring world-class MMA training to your gym. Multi-day seminars covering striking, wrestling, ground game, and fight strategy.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9883;</div>
+        <div class="service-title">Fight Camps</div>
+        <div class="service-desc">Full preparation for your next fight. Technique, sparring, conditioning, weight management, and corner support on fight night.</div>
+      </div>
+    </div>
+
+    <div class="services-grid" data-lang="it">
+      <div class="service-card">
+        <div class="service-icon">&#9733;</div>
+        <div class="service-title">Striking</div>
+        <div class="service-desc">Boxe, kickboxing e striking MMA. Footwork, combinazioni, contrattacco e potenza di KO da un fighter con il 100% di vittorie per KO.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#8982;</div>
+        <div class="service-title">Wrestling &amp; Grappling</div>
+        <div class="service-desc">Takedown, difesa da takedown, chain wrestling, controllo a terra, scramble e transizioni. Per BJJ, MMA o wrestling puro.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9670;</div>
+        <div class="service-title">Strategia MMA</div>
+        <div class="service-desc">Game plan, cage craft, gestione dei round e preparazione mentale. Cornering e coaching in fight camp per agonisti.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9654;</div>
+        <div class="service-title">Coaching Privato</div>
+        <div class="service-desc">Sessioni individuali su misura per i tuoi obiettivi. Che tu sia un principiante o un fighter in preparazione gara.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9673;</div>
+        <div class="service-title">Seminari &amp; Stage</div>
+        <div class="service-desc">Porta l'allenamento MMA di livello mondiale nella tua palestra. Seminari su striking, wrestling, ground game e strategia.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9883;</div>
+        <div class="service-title">Fight Camp</div>
+        <div class="service-desc">Preparazione completa per il tuo prossimo incontro. Tecnica, sparring, condizionamento, taglio peso e angolo il giorno del match.</div>
+      </div>
+    </div>
+
+    <div class="services-grid" data-lang="fr">
+      <div class="service-card">
+        <div class="service-icon">&#9733;</div>
+        <div class="service-title">Striking</div>
+        <div class="service-desc">Boxe, kickboxing et striking MMA. Jeu de jambes, combinaisons, contre-attaque et puissance de frappe d'un combattant avec 100% de KO.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#8982;</div>
+        <div class="service-title">Wrestling &amp; Grappling</div>
+        <div class="service-desc">Takedowns, d&eacute;fense, cha&icirc;nes de lutte, contr&ocirc;le au sol, scrambles et transitions. Pour le BJJ, le MMA ou la lutte pure.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9670;</div>
+        <div class="service-title">Strat&eacute;gie MMA</div>
+        <div class="service-desc">Plans de combat, craft de cage, gestion des rounds et pr&eacute;paration mentale. Coaching et corner pour comp&eacute;titeurs.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9654;</div>
+        <div class="service-title">Coaching Priv&eacute;</div>
+        <div class="service-desc">Sessions individuelles adapt&eacute;es &agrave; vos objectifs. D&eacute;butant ou combattant en pr&eacute;paration.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9673;</div>
+        <div class="service-title">S&eacute;minaires &amp; Stages</div>
+        <div class="service-desc">Amenez l'entra&icirc;nement MMA de classe mondiale dans votre salle. S&eacute;minaires sur le striking, la lutte et la strat&eacute;gie.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9883;</div>
+        <div class="service-title">Fight Camp</div>
+        <div class="service-desc">Pr&eacute;paration compl&egrave;te pour votre prochain combat. Technique, sparring, condition physique et coin le jour J.</div>
+      </div>
+    </div>
+
+    <div class="services-grid" data-lang="ru">
+      <div class="service-card">
+        <div class="service-icon">&#9733;</div>
+        <div class="service-title">&#1059;&#1076;&#1072;&#1088;&#1085;&#1072;&#1103; &#1090;&#1077;&#1093;&#1085;&#1080;&#1082;&#1072;</div>
+        <div class="service-desc">&#1041;&#1086;&#1082;&#1089;, &#1082;&#1080;&#1082;&#1073;&#1086;&#1082;&#1089;&#1080;&#1085;&#1075; &#1080; MMA. &#1056;&#1072;&#1073;&#1086;&#1090;&#1072; &#1085;&#1086;&#1075;, &#1082;&#1086;&#1084;&#1073;&#1080;&#1085;&#1072;&#1094;&#1080;&#1080;, &#1082;&#1086;&#1085;&#1090;&#1088;&#1072;&#1090;&#1072;&#1082;&#1080; &#1080; &#1085;&#1086;&#1082;&#1072;&#1091;&#1090;&#1080;&#1088;&#1091;&#1102;&#1097;&#1072;&#1103; &#1089;&#1080;&#1083;&#1072; &#1086;&#1090; &#1073;&#1086;&#1081;&#1094;&#1072; &#1089;&#1086; 100% KO.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#8982;</div>
+        <div class="service-title">&#1041;&#1086;&#1088;&#1100;&#1073;&#1072; &#1080; &#1075;&#1088;&#1101;&#1087;&#1087;&#1083;&#1080;&#1085;&#1075;</div>
+        <div class="service-desc">&#1058;&#1077;&#1081;&#1082;&#1076;&#1072;&#1091;&#1085;&#1099;, &#1079;&#1072;&#1097;&#1080;&#1090;&#1072;, &#1094;&#1077;&#1087;&#1086;&#1095;&#1082;&#1080;, &#1082;&#1086;&#1085;&#1090;&#1088;&#1086;&#1083;&#1100; &#1085;&#1072; &#1079;&#1077;&#1084;&#1083;&#1077;, &#1089;&#1082;&#1088;&#1101;&#1084;&#1073;&#1083;&#1099; &#1080; &#1087;&#1077;&#1088;&#1077;&#1093;&#1086;&#1076;&#1099;. &#1044;&#1083;&#1103; BJJ, MMA &#1080;&#1083;&#1080; &#1073;&#1086;&#1088;&#1100;&#1073;&#1099;.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9670;</div>
+        <div class="service-title">&#1057;&#1090;&#1088;&#1072;&#1090;&#1077;&#1075;&#1080;&#1103; MMA</div>
+        <div class="service-desc">&#1043;&#1077;&#1081;&#1084;-&#1087;&#1083;&#1072;&#1085;&#1099;, &#1088;&#1072;&#1073;&#1086;&#1090;&#1072; &#1074; &#1082;&#1083;&#1077;&#1090;&#1082;&#1077;, &#1091;&#1087;&#1088;&#1072;&#1074;&#1083;&#1077;&#1085;&#1080;&#1077; &#1088;&#1072;&#1091;&#1085;&#1076;&#1072;&#1084;&#1080; &#1080; &#1084;&#1077;&#1085;&#1090;&#1072;&#1083;&#1100;&#1085;&#1072;&#1103; &#1087;&#1086;&#1076;&#1075;&#1086;&#1090;&#1086;&#1074;&#1082;&#1072;. &#1059;&#1075;&#1083;&#1086;&#1074;&#1072;&#1103; &#1087;&#1086;&#1076;&#1076;&#1077;&#1088;&#1078;&#1082;&#1072; &#1076;&#1083;&#1103; &#1089;&#1087;&#1086;&#1088;&#1090;&#1089;&#1084;&#1077;&#1085;&#1086;&#1074;.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9654;</div>
+        <div class="service-title">&#1063;&#1072;&#1089;&#1090;&#1085;&#1099;&#1077; &#1090;&#1088;&#1077;&#1085;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080;</div>
+        <div class="service-desc">&#1048;&#1085;&#1076;&#1080;&#1074;&#1080;&#1076;&#1091;&#1072;&#1083;&#1100;&#1085;&#1099;&#1077; &#1079;&#1072;&#1085;&#1103;&#1090;&#1080;&#1103; &#1087;&#1086;&#1076; &#1074;&#1072;&#1096;&#1080; &#1094;&#1077;&#1083;&#1080;. &#1044;&#1083;&#1103; &#1085;&#1086;&#1074;&#1080;&#1095;&#1082;&#1086;&#1074; &#1080; &#1087;&#1088;&#1086;&#1092;&#1077;&#1089;&#1089;&#1080;&#1086;&#1085;&#1072;&#1083;&#1086;&#1074;.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9673;</div>
+        <div class="service-title">&#1057;&#1077;&#1084;&#1080;&#1085;&#1072;&#1088;&#1099;</div>
+        <div class="service-desc">&#1055;&#1088;&#1080;&#1074;&#1077;&#1079;&#1080;&#1090;&#1077; &#1090;&#1088;&#1077;&#1085;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1084;&#1080;&#1088;&#1086;&#1074;&#1086;&#1075;&#1086; &#1082;&#1083;&#1072;&#1089;&#1089;&#1072; &#1074; &#1074;&#1072;&#1096; &#1079;&#1072;&#1083;. &#1057;&#1077;&#1084;&#1080;&#1085;&#1072;&#1088;&#1099; &#1087;&#1086; &#1091;&#1076;&#1072;&#1088;&#1085;&#1086;&#1081; &#1090;&#1077;&#1093;&#1085;&#1080;&#1082;&#1077;, &#1073;&#1086;&#1088;&#1100;&#1073;&#1077; &#1080; &#1089;&#1090;&#1088;&#1072;&#1090;&#1077;&#1075;&#1080;&#1080;.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9883;</div>
+        <div class="service-title">&#1060;&#1072;&#1081;&#1090;-&#1082;&#1101;&#1084;&#1087;</div>
+        <div class="service-desc">&#1055;&#1086;&#1083;&#1085;&#1072;&#1103; &#1087;&#1086;&#1076;&#1075;&#1086;&#1090;&#1086;&#1074;&#1082;&#1072; &#1082; &#1073;&#1086;&#1102;. &#1058;&#1077;&#1093;&#1085;&#1080;&#1082;&#1072;, &#1089;&#1087;&#1072;&#1088;&#1088;&#1080;&#1085;&#1075;&#1080;, &#1082;&#1086;&#1085;&#1076;&#1080;&#1094;&#1080;&#1086;&#1085;&#1085;&#1072;&#1103; &#1087;&#1086;&#1076;&#1075;&#1086;&#1090;&#1086;&#1074;&#1082;&#1072; &#1080; &#1091;&#1075;&#1083;&#1086;&#1074;&#1072;&#1103; &#1087;&#1086;&#1076;&#1076;&#1077;&#1088;&#1078;&#1082;&#1072;.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="divider"></div>
+    <div class="gallery-grid">
+      <img src="edo-1.jpeg" alt="Edoardo Caiazza — Bellator">
+      <img src="edo-3.jpeg" alt="Edoardo Caiazza — fighting stance">
+      <img src="edo-2.jpeg" alt="Edoardo Caiazza — guard">
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <div class="quote-text" data-lang="en">&ldquo;They told me my career was over. I came back and knocked out <strong>seven straight</strong>. The ghost doesn't die &mdash; <strong>he disappears and returns stronger</strong>.&rdquo;</div>
+  <div class="quote-text" data-lang="it">&ldquo;Mi hanno detto che la mia carriera era finita. Sono tornato e ho messo KO <strong>sette avversari di fila</strong>. Il fantasma non muore &mdash; <strong>scompare e torna pi&ugrave; forte</strong>.&rdquo;</div>
+  <div class="quote-text" data-lang="fr">&ldquo;On m'a dit que ma carri&egrave;re &eacute;tait finie. Je suis revenu et j'ai mis KO <strong>sept adversaires d'affil&eacute;e</strong>. Le fant&ocirc;me ne meurt pas &mdash; <strong>il dispara&icirc;t et revient plus fort</strong>.&rdquo;</div>
+  <div class="quote-text" data-lang="ru">&ldquo;&#1052;&#1085;&#1077; &#1089;&#1082;&#1072;&#1079;&#1072;&#1083;&#1080;, &#1095;&#1090;&#1086; &#1082;&#1072;&#1088;&#1100;&#1077;&#1088;&#1072; &#1079;&#1072;&#1082;&#1086;&#1085;&#1095;&#1077;&#1085;&#1072;. &#1071; &#1074;&#1077;&#1088;&#1085;&#1091;&#1083;&#1089;&#1103; &#1080; &#1085;&#1086;&#1082;&#1072;&#1091;&#1090;&#1080;&#1088;&#1086;&#1074;&#1072;&#1083; <strong>&#1089;&#1077;&#1084;&#1100; &#1089;&#1086;&#1087;&#1077;&#1088;&#1085;&#1080;&#1082;&#1086;&#1074; &#1087;&#1086;&#1076;&#1088;&#1103;&#1076;</strong>. &#1055;&#1088;&#1080;&#1079;&#1088;&#1072;&#1082; &#1085;&#1077; &#1091;&#1084;&#1080;&#1088;&#1072;&#1077;&#1090; &mdash; <strong>&#1086;&#1085; &#1080;&#1089;&#1095;&#1077;&#1079;&#1072;&#1077;&#1090; &#1080; &#1074;&#1086;&#1079;&#1074;&#1088;&#1072;&#1097;&#1072;&#1077;&#1090;&#1089;&#1103; &#1089;&#1080;&#1083;&#1100;&#1085;&#1077;&#1077;</strong>.&rdquo;</div>
+</section>
+
+<!-- BOOK / FORM -->
+<section class="form-section" id="book">
+  <div class="container">
+    <div class="divider"></div>
+    <h2 class="section-title" data-lang="en">Book a Session</h2>
+    <h2 class="section-title" data-lang="it">Prenota una Sessione</h2>
+    <h2 class="section-title" data-lang="fr">R&eacute;server une Session</h2>
+    <h2 class="section-title" data-lang="ru">&#1047;&#1072;&#1087;&#1080;&#1089;&#1072;&#1090;&#1100;&#1089;&#1103;</h2>
+    <p class="section-sub" data-lang="en">Get in touch to start training</p>
+    <p class="section-sub" data-lang="it">Contattami per iniziare ad allenarti</p>
+    <p class="section-sub" data-lang="fr">Contactez-moi pour commencer</p>
+    <p class="section-sub" data-lang="ru">&#1057;&#1074;&#1103;&#1078;&#1080;&#1090;&#1077;&#1089;&#1100; &#1089;&#1086; &#1084;&#1085;&#1086;&#1081;</p>
+
+    <div class="form-wrap">
+      <form action="https://formsubmit.co/edocaiazza@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New coaching inquiry — edoardocaiazza.com">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="form-group">
+          <label data-lang="en">Full Name</label>
+          <label data-lang="it">Nome e Cognome</label>
+          <label data-lang="fr">Nom Complet</label>
+          <label data-lang="ru">&#1048;&#1084;&#1103;</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label data-lang="en">Phone / WhatsApp</label>
+          <label data-lang="it">Telefono / WhatsApp</label>
+          <label data-lang="fr">T&eacute;l&eacute;phone / WhatsApp</label>
+          <label data-lang="ru">&#1058;&#1077;&#1083;&#1077;&#1092;&#1086;&#1085; / WhatsApp</label>
+          <input type="tel" name="phone">
+        </div>
+        <div class="form-group">
+          <label data-lang="en">What are you interested in?</label>
+          <label data-lang="it">Cosa ti interessa?</label>
+          <label data-lang="fr">Qu'est-ce qui vous int&eacute;resse ?</label>
+          <label data-lang="ru">&#1063;&#1090;&#1086; &#1074;&#1072;&#1089; &#1080;&#1085;&#1090;&#1077;&#1088;&#1077;&#1089;&#1091;&#1077;&#1090;?</label>
+          <select name="interest">
+            <option value="private-coaching">Private Coaching / Coaching Privato</option>
+            <option value="striking">Striking</option>
+            <option value="wrestling-grappling">Wrestling &amp; Grappling</option>
+            <option value="mma-strategy">MMA Strategy / Strategia MMA</option>
+            <option value="seminar">Seminar / Seminario</option>
+            <option value="fight-camp">Fight Camp</option>
+            <option value="other">Other / Altro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-lang="en">Message</label>
+          <label data-lang="it">Messaggio</label>
+          <label data-lang="fr">Message</label>
+          <label data-lang="ru">&#1057;&#1086;&#1086;&#1073;&#1097;&#1077;&#1085;&#1080;&#1077;</label>
+          <textarea name="message"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" data-lang="en">Send Request</button>
+        <button type="submit" class="submit-btn" data-lang="it">Invia Richiesta</button>
+        <button type="submit" class="submit-btn" data-lang="fr">Envoyer</button>
+        <button type="submit" class="submit-btn" data-lang="ru">&#1054;&#1090;&#1087;&#1088;&#1072;&#1074;&#1080;&#1090;&#1100;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT BAR -->
+<div class="contact-bar">
+  <a href="https://wa.me/393896943053" target="_blank" class="contact-link">
+    <div class="cl-icon">W</div>
+    <span>WhatsApp</span>
+  </a>
+  <a href="https://www.instagram.com/edoardocaiazza/" target="_blank" class="contact-link">
+    <div class="cl-icon">IG</div>
+    <span>@edoardocaiazza</span>
+  </a>
+  <a href="mailto:edocaiazza@gmail.com" class="contact-link">
+    <div class="cl-icon">@</div>
+    <span>edocaiazza@gmail.com</span>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>Edoardo &ldquo;The Ghost&rdquo; Caiazza &mdash; Verbania, Italy</p>
+  <p style="margin-top:6px;opacity:0.4">&copy; 2026</p>
+</footer>
+
+<script>
+// LANGUAGE SWITCHER
+function setLang(lang){
+  document.querySelectorAll('[data-lang]').forEach(function(el){
+    el.classList.toggle('lang-hide',el.dataset.lang!==lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active',b.textContent.trim().toLowerCase()===lang);
+  });
+  localStorage.setItem('ghost-lang',lang);
+}
+(function(){
+  var s=localStorage.getItem('ghost-lang');
+  if(s){setLang(s)}
+  else{
+    var n=navigator.language||'';
+    if(n.startsWith('it'))setLang('it');
+    else if(n.startsWith('fr'))setLang('fr');
+    else if(n.startsWith('ru'))setLang('ru');
+    else setLang('en');
+  }
+})();
+
+// NAVBAR SCROLL
+var nb=document.getElementById('navbar');
+window.addEventListener('scroll',function(){nb.classList.toggle('scrolled',window.scrollY>50)});
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.querySelector(this.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
+  });
+});
+
+// GHOST PARTICLES
+(function(){
+  var c=document.getElementById('ghostCanvas');
+  if(!c)return;
+  var ctx=c.getContext('2d');
+  var w,h;
+  function resize(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight}
+  resize();window.addEventListener('resize',resize);
+
+  var particles=[];
+  for(var i=0;i<60;i++){
+    particles.push({
+      x:Math.random()*1200,y:Math.random()*800,
+      vx:(Math.random()-0.5)*0.3,vy:-Math.random()*0.5-0.1,
+      size:Math.random()*3+1,
+      opacity:Math.random()*0.3,
+      pulse:Math.random()*Math.PI*2
+    });
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    particles.forEach(function(p){
+      p.x+=p.vx;p.y+=p.vy;p.pulse+=0.01;
+      if(p.y<-10){p.y=h+10;p.x=Math.random()*w}
+      if(p.x<-10)p.x=w+10;
+      if(p.x>w+10)p.x=-10;
+      var o=p.opacity*(0.5+0.5*Math.sin(p.pulse));
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+      ctx.fillStyle='rgba(123,143,168,'+o+')';
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// FADE ON SCROLL
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.style.opacity='1';e.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:0.08});
+document.querySelectorAll('section:not(.hero)').forEach(function(s){
+  s.style.opacity='0';s.style.transform='translateY(20px)';
+  s.style.transition='opacity 0.7s ease, transform 0.7s ease';
+  obs.observe(s);
+});
+</script>
+</body>
+</html>
