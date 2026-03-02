@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -196,20 +194,45 @@ section{padding:80px 20px;position:relative}
   font-size:0.82rem;color:var(--grey-l);line-height:1.8;
 }
 
+/* PHOTO BREAKS */
+.photo-break{
+  padding:40px 20px;
+  background:var(--black);
+}
+
 /* GALLERY */
 .gallery-grid{
-  display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:6px;
-  max-width:800px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  max-width:900px;margin:0 auto;
 }
-.gallery-grid img{
-  width:100%;height:360px;object-fit:cover;object-position:top;
-  filter:saturate(0.5) contrast(1.1);
-  border:1px solid var(--line);
+.gallery-grid .gal-frame{
+  position:relative;overflow:hidden;
+  background:rgba(123,143,168,0.03);
+  border:1px solid rgba(123,143,168,0.15);
+  box-shadow:0 0 30px rgba(123,143,168,0.06), inset 0 0 40px rgba(0,0,0,0.3);
   transition:all 0.5s;
 }
-.gallery-grid img:hover{
-  filter:saturate(0.8) contrast(1.1);
+.gallery-grid .gal-frame::before{
+  content:'';position:absolute;inset:0;z-index:1;
+  background:radial-gradient(ellipse at center,transparent 50%,rgba(10,10,10,0.5) 100%);
+  pointer-events:none;
+}
+.gallery-grid .gal-frame::after{
+  content:'';position:absolute;inset:6px;z-index:2;
+  border:1px solid rgba(123,143,168,0.08);
+  pointer-events:none;
+}
+.gallery-grid .gal-frame:hover{
   border-color:rgba(123,143,168,0.3);
+  box-shadow:0 0 40px rgba(123,143,168,0.12), inset 0 0 40px rgba(0,0,0,0.2);
+}
+.gallery-grid .gal-frame img{
+  width:100%;height:auto;display:block;
+  filter:saturate(0.45) contrast(1.1);
+  transition:all 0.5s;
+}
+.gallery-grid .gal-frame:hover img{
+  filter:saturate(0.7) contrast(1.1);
 }
 
 /* QUOTE */
@@ -289,9 +312,7 @@ footer p{font-size:0.7rem;color:var(--grey);letter-spacing:2px}
 /* RESPONSIVE */
 @media(max-width:768px){
   .services-grid{grid-template-columns:1fr}
-  .gallery-grid{grid-template-columns:1fr 1fr}
-  .gallery-grid img{height:240px}
-  .gallery-grid img:nth-child(3){grid-column:1/3;height:200px}
+  .gallery-grid{grid-template-columns:1fr;gap:16px}
   .cred-grid{grid-template-columns:1fr}
   .hero-stats{gap:16px}
   .contact-bar{gap:20px;flex-direction:column;align-items:center}
@@ -573,10 +594,12 @@ footer p{font-size:0.7rem;color:var(--grey);letter-spacing:2px}
 <section id="gallery">
   <div class="container">
     <div class="divider"></div>
+    <div style="display:flex;justify-content:center;margin-bottom:16px">
+      <div style="width:360px;flex-shrink:0;border:1px solid rgba(123,143,168,0.15);box-shadow:0 0 30px rgba(123,143,168,0.06)"><img src="edo-galla.jpeg" alt="Edoardo Caiazza — MMA Galla Denmark" style="width:100%;height:auto;display:block;filter:saturate(0.45) contrast(1.1)"></div>
+    </div>
     <div class="gallery-grid">
-      <img src="edo-1.jpeg" alt="Edoardo Caiazza — Bellator">
-      <img src="edo-3.jpeg" alt="Edoardo Caiazza — fighting stance">
-      <img src="edo-2.jpeg" alt="Edoardo Caiazza — guard">
+      <div class="gal-frame"><img src="edo-bellator287.jpeg" alt="Edoardo Caiazza — Bellator 287 victory"></div>
+      <div class="gal-frame"><img src="edo-kick.jpeg" alt="Edoardo Caiazza — high kick in the cage"></div>
     </div>
   </div>
 </section>
@@ -677,6 +700,9 @@ footer p{font-size:0.7rem;color:var(--grey);letter-spacing:2px}
 
 <!-- FOOTER -->
 <footer>
+  <div class="gal-frame" style="width:120px;height:120px;border-radius:50%;overflow:hidden;margin:0 auto 16px">
+    <img src="edo-cagewarriors.jpeg" alt="Edoardo Caiazza" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:50%">
+  </div>
   <p>Edoardo &ldquo;The Ghost&rdquo; Caiazza &mdash; Verbania, Italy</p>
   <p style="margin-top:6px;opacity:0.4">&copy; 2026</p>
 </footer>
